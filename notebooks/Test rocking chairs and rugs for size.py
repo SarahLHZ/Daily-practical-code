@@ -10,7 +10,7 @@ ax = fig1.add_subplot(111, aspect = 'equal')
 plt.xlim(0, 12)
 plt.ylim(0, 12)
 
-ax.add_patch(pc.Rectangle(xy=(2.6, 1.3),    
+ax.add_patch(pc.Rectangle(xy=(2.6, 1.3),    #Lower left corner coordinates
                  width=6.8,
                  height=9.4,
                  fc='steelblue'
