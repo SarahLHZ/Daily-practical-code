@@ -1,0 +1,63 @@
+#Take Apple as an example
+
+import numpy as np
+import pandas as pd
+import requests
+
+url = "https://api.example.com/data"
+headers = {
+    "Content-Type": "application/json",
+    "x-app-id": "your_api_id",
+    "x-app-key": "your_api_key"
+}
+payload = {
+    "query": "apple"
+}
+
+response = requests.post(url, headers=headers, json=payload)
+
+if response.status_code == 200:
+    data = response.json()
+    df = pd.DataFrame(data)
+    array = np.array(df)
+    print(array)
+else:
+    print("Request failed with status code:", response.status_code)
+
+def extract_nutritional_info(apple_data):
+    # Extract nutritional information
+    apple_info = apple_data[0][0]
+
+    # Print nutritional information
+    print("苹果营养信息：")
+    print("卡路里 (Calories):", apple_info['nf_calories'])
+    print("总脂肪（Total Fat）:", apple_info['nf_total_fat'])
+    print("饱和脂肪（Saturated Fat）:", apple_info['nf_saturated_fat'])
+    print("胆固醇（Cholesterol）:", apple_info['nf_cholesterol'])
+    print("钠（Sodium）:", apple_info['nf_sodium'])
+    print("总碳水化合物（Total Carbohydrate）:", apple_info['nf_total_carbohydrate'])
+    print("膳食纤维（Dietary Fiber）:", apple_info['nf_dietary_fiber'])
+    print("糖分（Sugars）:", apple_info['nf_sugars'])
+    print("蛋白质（Protein）:", apple_info['nf_protein'])
+    print("钾（Potassium）:", apple_info['nf_potassium'])
+    print("磷（Phosphorus）:", apple_info['nf_p'])
+
+apple_data = [[{'food_name': 'apple', 'brand_name': None, 'serving_qty': 1, 'serving_unit': 'medium (3" dia)', 'serving_weight_grams': 182, 'nf_calories': 94.64, 'nf_total_fat': 0.31, 'nf_saturated_fat': 0.05, 'nf_cholesterol': 0, 'nf_sodium': 1.82, 'nf_total_carbohydrate': 25.13, 'nf_dietary_fiber': 4.37, 'nf_sugars': 18.91, 'nf_protein': 0.47, 'nf_potassium': 194.74, 'nf_p': 20.02, ... 'brick_code': None, 'tag_id': None}]]
+
+def calculate_calories(apple_data, weight):
+    # Get nutritional information for apples
+    apple_info = apple_data[0][0]
+
+    # Get calories per gram of apple
+    calories_per_gram = apple_info['nf_calories'] / apple_info['serving_weight_grams']
+
+    # Calculate Calories in apples actually eaten
+    consumed_calories = weight * calories_per_gram
+
+    return consumed_calories
+
+# Suppose you eat 150 grams of apples
+weight_eaten = 150
+# Calculate calories using function
+calories_consumed = calculate_calories(apple_data, weight_eaten)
+print("Eat {} grams of apples, the calories are: {:.2f}".format(weight_eaten, calories_consumed))
