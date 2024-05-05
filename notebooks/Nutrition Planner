@@ -31,16 +31,16 @@ def extract_nutritional_info(apple_data):
     # Print nutritional information
     print("苹果营养信息：")
     print("卡路里 (Calories):", apple_info['nf_calories'])
-    print("总脂肪（Total Fat）:", apple_info['nf_total_fat'])
-    print("饱和脂肪（Saturated Fat）:", apple_info['nf_saturated_fat'])
-    print("胆固醇（Cholesterol）:", apple_info['nf_cholesterol'])
-    print("钠（Sodium）:", apple_info['nf_sodium'])
-    print("总碳水化合物（Total Carbohydrate）:", apple_info['nf_total_carbohydrate'])
-    print("膳食纤维（Dietary Fiber）:", apple_info['nf_dietary_fiber'])
-    print("糖分（Sugars）:", apple_info['nf_sugars'])
-    print("蛋白质（Protein）:", apple_info['nf_protein'])
-    print("钾（Potassium）:", apple_info['nf_potassium'])
-    print("磷（Phosphorus）:", apple_info['nf_p'])
+    print("总脂肪 (Total Fat):", apple_info['nf_total_fat'])
+    print("饱和脂肪 (Saturated Fat):", apple_info['nf_saturated_fat'])
+    print("胆固醇 (Cholesterol):", apple_info['nf_cholesterol'])
+    print("钠 (Sodium):", apple_info['nf_sodium'])
+    print("总碳水化合物 (Total Carbohydrate):", apple_info['nf_total_carbohydrate'])
+    print("膳食纤维 (Dietary Fiber):", apple_info['nf_dietary_fiber'])
+    print("糖分 (Sugars):", apple_info['nf_sugars'])
+    print("蛋白质 (Protein):", apple_info['nf_protein'])
+    print("钾 (Potassium):", apple_info['nf_potassium'])
+    print("磷 (Phosphorus):", apple_info['nf_p'])
 
 apple_data = [[{'food_name': 'apple', 'brand_name': None, 'serving_qty': 1, 'serving_unit': 'medium (3" dia)', 'serving_weight_grams': 182, 'nf_calories': 94.64, 'nf_total_fat': 0.31, 'nf_saturated_fat': 0.05, 'nf_cholesterol': 0, 'nf_sodium': 1.82, 'nf_total_carbohydrate': 25.13, 'nf_dietary_fiber': 4.37, 'nf_sugars': 18.91, 'nf_protein': 0.47, 'nf_potassium': 194.74, 'nf_p': 20.02, ... 'brick_code': None, 'tag_id': None}]]
 
